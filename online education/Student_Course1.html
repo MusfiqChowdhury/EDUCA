@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course-1</title>
+
+    <link rel="icon" href="education.png" type="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="home.html" class="logo"> <i class="fas fa-graduation-cap"></i> educa </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="Home_Student.html">home</a></li>
+            <li><a href="#">courses +</a>
+                <ul>
+                    <li><a href="course-1.html">Computer Science</a></li>
+                    <li><a href="course-2.html">Social Science</a></li>
+                    <!-- <li><a href="course-3.html">course 03</a></li> -->
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+
+
+<section class="heading">
+    <h3>Computer Science</h3>
+    <p> <a href="home.html">home >></a> course-1 </p>
+</section>
+
+<!-- course-1 section starts  -->
+
+<!-- Buttons for adding a new course -->
+
+
+
+<section class="course-1">
+
+    <div class="box">
+        <img src="images/course-1.png" alt="">
+        <h3>web design</h3>
+        <a href="https://www.w3schools.com/html/default.asp" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-2.png" alt="">
+        <h3>seo marketing</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-3.png" alt="">
+        <h3>science & biology</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="P1.jpg" alt="" height="320px" width="200px">
+        <h3>Programming language</h3>
+        <a href="Programming language.html" class="btn">buy Course</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-5.png" alt="">
+        <h3>digital marketing</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-6.png" alt="">
+        <h3>maths & statistics</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-7.png" alt="">
+        <h3>data analysis</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-8.png" alt="">
+        <h3>email marketing</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="box">
+        <img src="images/course-9.png" alt="">
+        <h3>graphic design</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+</section>
+
+<!-- <div style="position: relative; background: linear-gradient(to bottom right, #ff7e5f, #feb47b); padding: 20px; border-radius: 20px; width: 300px; margin: 0 auto; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+
+    <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 20px solid #ff7e5f;"></div>
+
+    <input type="file" id="imageInput" accept="image/*" style="display: block; margin: 0 auto 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 80%;"><br>
+
+    <input type="text" id="titleInput" placeholder="Enter Title" style="display: block; margin: 0 auto 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 80%;"><br>
+
+    <button id="addCourseBtn" style="display: block; margin: 0 auto; padding: 10px 20px; background-color: #ff7e5f; color: white; border: none; border-radius: 4px; cursor: pointer;">Add Course</button>
+
+</div> -->
+
+
+
+
+
+
+
+<!-- <section class="course-1">
+
+    <div class="box">
+        <img src="images/course-1.png" alt="">
+        <h3>web design</h3>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <!-- Additional courses will be dynamically added here -->
+
+</section> -->
+
+<!-- course-1 section ends -->
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+    // JavaScript code to add a new course dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('addCourseBtn').addEventListener('click', function() {
+            var imageInput = document.getElementById('imageInput');
+            var titleInput = document.getElementById('titleInput');
+
+            if (imageInput.files.length === 0 || !titleInput.value) {
+                alert('Please select an image and enter a title.');
+                return;
+            }
+
+            var courseContainer = document.querySelector('.course-1');
+            var newCourseDiv = document.createElement('div');
+            newCourseDiv.classList.add('box');
+
+            var newCourseImage = document.createElement('img');
+            newCourseImage.src = URL.createObjectURL(imageInput.files[0]);
+            newCourseImage.alt = titleInput.value;
+
+            var newCourseTitle = document.createElement('h3');
+            newCourseTitle.textContent = titleInput.value;
+
+            var readMoreLink = document.createElement('a');
+            readMoreLink.href = '#'; // You can specify the link destination
+            readMoreLink.classList.add('btn');
+            readMoreLink.textContent = 'Read More';
+
+            newCourseDiv.appendChild(newCourseImage);
+            newCourseDiv.appendChild(newCourseTitle);
+            newCourseDiv.appendChild(readMoreLink);
+
+            courseContainer.appendChild(newCourseDiv);
+        });
+    });
+</script>
+
+</body>
+</html>
